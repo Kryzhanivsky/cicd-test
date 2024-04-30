@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import {plus2} from "./actions/plus2"
+import {minus2} from "./actions/minus2"
+import {multiply2} from "./actions/multiply2"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [value, setValue] = useState(0);
+
+    return (
+        <div>
+            <h1>Counter</h1>
+            <div>
+                <p>
+                    Final value: {value}
+                </p>
+                <button onClick={() => setValue(prev => plus2(prev))}>
+                    +2
+                </button>
+                <button onClick={() => setValue(prev => minus2(prev))}>
+                    -2
+                </button>
+                <button onClick={() => setValue(prev => multiply2(prev))}>
+                    *2
+                </button>
+            </div>
+        </div>
+    );
 }
 
 export default App;
