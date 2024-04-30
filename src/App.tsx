@@ -9,18 +9,18 @@ function App() {
 
     return (
         <div>
-            <h1>Counter</h1>
+            <h1 className="header">Counter</h1>
             <div>
                 <p>
                     Final value: {value}
                 </p>
-                <button onClick={() => setValue(prev => plus2(prev))}>
+                <button className="button" onClick={() => setValue(prev => plus2(prev))}>
                     +2
                 </button>
-                <button onClick={() => setValue(prev => minus2(prev))}>
+                <button className="button" onClick={() => setValue(prev => minus2(prev))}>
                     -2
                 </button>
-                <button onClick={() => setValue(prev => multiply2(prev))}>
+                <button className="button" onClick={() => setValue(prev => multiply2(prev))}>
                     *2
                 </button>
             </div>
